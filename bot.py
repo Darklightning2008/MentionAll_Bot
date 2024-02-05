@@ -33,7 +33,7 @@ async def start(event):
 
 @client.on(events.NewMessage(pattern="^/help$"))
 async def help(event):
-  helptext = "**Help Menu of MentionAll_Bot**\n\nCommand: /all\n__You can use this command with text what you want to say to others.__\n`Example: /mentionall Hi welcome to Uzumaki!`\n__You can you this command as a reply to any message. Bot will tag users to that replied messsage."
+  helptext = "**Help Menu of MentionAll_Bot**\n\nCommand: /all\n__You can use this command with text what you want to say to others.__\n`Example: /all Hi welcome to Uzumaki!`\n__You can you this command as a reply to any message. Bot will tag users to that replied messsage."
   await event.reply(
     helptext,
     link_preview=False,
@@ -45,7 +45,7 @@ async def help(event):
     )
   )
   
-@client.on(events.NewMessage(pattern="^/mentionall ?(.*)"))
+@client.on(events.NewMessage(pattern="^/all ?(.*)"))
 async def all(event):
   chat_id = event.chat_id
   if event.is_private:
