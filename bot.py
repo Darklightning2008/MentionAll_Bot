@@ -21,7 +21,7 @@ spam_chats = []
 @client.on(events.NewMessage(pattern="^/start$"))
 async def start(event):
   await event.reply(
-    "__**I'm Uzumaki tagall bot**, I will help you to mention all members in group📲\nClick **/help** for more information__\n\n Follow [@LovelyXSupport](https://github.com/Darklightning2008) on github",
+    "__**I'm Uzumaki tagall bot**, I will help you to mention all members in group📲\nClick **/help** for more information__\n\n Join [LovelyXSupport](https://t.me/LovelyXSupport) on Telegram",
     link_preview=False,
     buttons=(
       [
@@ -33,7 +33,7 @@ async def start(event):
 
 @client.on(events.NewMessage(pattern="^/help$"))
 async def help(event):
-  helptext = "**Help Menu of MentionAll_Bot**\n\nCommand: /mentionall\n__You can use this command with text what you want to say to others.__\n`Example: /mentionall Hi welcome to Uzumaki!`\n__You can you this command as a reply to any message. Bot will tag users to that replied messsage."
+  helptext = "**Help Menu of MentionAll_Bot**\n\nCommand: /all\n__You can use this command with text what you want to say to others.__\n`Example: /mentionall Hi welcome to Uzumaki!`\n__You can you this command as a reply to any message. Bot will tag users to that replied messsage."
   await event.reply(
     helptext,
     link_preview=False,
@@ -46,7 +46,7 @@ async def help(event):
   )
   
 @client.on(events.NewMessage(pattern="^/mentionall ?(.*)"))
-async def mentionall(event):
+async def all(event):
   chat_id = event.chat_id
   if event.is_private:
     return await event.respond("__This command can be use in groups and channels!__")
